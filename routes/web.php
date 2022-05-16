@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+Route::resource('sous-groupe', SousGroupeController::class);
+Route::resource('parametre', ParametreController::class);
+Route::resource('patient', PatientController::class);
+Route::resource('machine', MachineController::class);
